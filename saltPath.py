@@ -15,3 +15,14 @@ plt.plot(data['Sales'].values.reshape(-1, 1), regressor.predict(data['Sales'].va
 plt.xlabel('Sales')
 plt.ylabel('Economic Index')
 plt.show()
+
+regressor2 = LinearRegression()
+
+regressor2.fit(data['Sales'].values.reshape(-1, 1),
+              data['Prom'].values.reshape(-1, 1))
+plt.scatter(data['Sales'].values, data['Index'].values, color='red')
+plt.plot(data['Sales'].values.reshape(-1, 1),
+         regressor2.predict(data['Sales'].values.reshape(-1, 1)), color='blue')
+plt.xlabel('Sales')
+plt.ylabel('Prom')
+plt.show()
